@@ -31,7 +31,7 @@ portion_down_payment = 0.25 * total_cost
  
 while current_savings <= portion_down_payment:
     
-    #Current savings to be increased monthly
+    #Current savings to be increased monthly by the interest i receive from my savings + portion already saved.
     current_savings += (current_savings * r/12) + portion_saved    
     
     
@@ -40,9 +40,10 @@ while current_savings <= portion_down_payment:
     time_taken += 1
     
     if time_taken % 6 == 0:
+#every 6months i hv  a percentage of my monthly salary added to my original salary.        
         
         monthly_salary = (semi_annual_raise * monthly_salary) + monthly_salary 
-        
+#my portion saved is raised by the increment to my salary since the % is already set.        
         portion_saved = portion_saved_percent * monthly_salary
     
    
